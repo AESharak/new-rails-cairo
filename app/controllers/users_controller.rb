@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  
+  skip_before_action :verify_authenticity_token, only: [:create, :update, :destroy]
   before_action :set_user, only: %i[ show edit update destroy ]
 
  
